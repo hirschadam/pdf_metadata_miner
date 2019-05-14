@@ -1,4 +1,5 @@
 # Author: Adam Hirsch
+# Platform compatability: Windows
 # Program: This script iterates through a directory of PDF & TXT files, extracts metadata from each PDF, 
 #		   and the URL where the PDF was download from a corresponding TXT file.
 #          then outputs the metadata to a CSV file.
