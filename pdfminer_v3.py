@@ -16,7 +16,7 @@ from pdfminer.pdfdocument import PDFDocument
 from io import StringIO
 
 # Modify this path to where your PDF/TXT files are
-ROOTDIR = 'W:\EIT\ISGR\_Security Operations Center\Agile Projects\Data Leak Scanning\CollectedPDF' 
+ROOTDIR = ''
 
 def convert(data):
 	"""Convert a dictionary keys & values to strings
@@ -134,7 +134,10 @@ def build_pdf_report(fieldnames, dict_list):
 		report_file.close()
 			
 if __name__ == "__main__":
-	print("...Building report...")
-	metadata_key_list, metadata_dict_list = process_pdf_files()
-	build_pdf_report(metadata_key_list, metadata_dict_list)
+	if not ROOTDIR:
+		print("You must specify a directory to scan the PDF files.")
+	else:
+		print("...Building report...")
+		metadata_key_list, metadata_dict_list = process_pdf_files()
+		build_pdf_report(metadata_key_list, metadata_dict_list)
 	
